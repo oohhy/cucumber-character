@@ -1,0 +1,158 @@
+@keyframes blink {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: scaleY(0.1);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes talk {
+  0% {
+    transform: none;
+  }
+  30% {
+    transform: scaleX(0.5) scaleY(2);
+  }
+  65% {
+    transform: scaleX(1.5) scaleY(0.5);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.face {
+  position: relative;
+  margin: 200px auto;
+  width: 150px;
+  height: 400px;
+  background-color: green;
+  border-radius: 45% 39% 39% 45% / 45% 45% 39% 39%;
+}
+
+.hair {
+  position: absolute;
+  top: -60px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: black;
+  z-index: -10;
+}
+
+.hair::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: -20px;
+  width: 100px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.eye-right {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+  top: 160px;
+  left: 45px;
+  animation: blink 2s ease-in-out;
+}
+.eye-left {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: black;
+  top: 160px;
+  right: 45px;
+  animation: blink 2s ease-in-out;
+}
+
+.nose {
+  position: absolute;
+  width: 20px;
+  height: 35px;
+  background-color: #fff;
+  top: 190px;
+  left: 65px;
+  border-radius: 51% 49% 70% 30% / 95% 100% 0% 5%;
+}
+
+.lip-top {
+  position: absolute;
+  top: 250px;
+  left: 45px;
+  width: 60px;
+  height: 20px;
+  background-color: midnightblue;
+  border-radius: 45%;
+  animation: talk 4s ease-in-out;
+  animation-delay: 2s;
+}
+
+.lip-bottom {
+  position: absolute;
+  top: 270px;
+  left: 45px;
+  width: 60px;
+  height: 20px;
+  background-color: midnightblue;
+  border-radius: 45%;
+  animation: talk 4s ease-in-out;
+  animation-delay: 2s;
+}
+
+.ballon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 125px;
+  height: 125px;
+  left: 200px;
+  top: -100px;
+  background: #9f9020;
+  color: white;
+  border-radius: 50%;
+}
+
+.ballon:after {
+  border-top: 20px solid #9f9020;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 0px solid transparent;
+  content: "";
+  position: absolute;
+  top: 111px;
+  left: 10px;
+  rotate: 30deg;
+}
+
+.ballon-txt {
+  opacity: 0;
+  animation: fadein 4s ease-in-out;
+  animation-delay: 2s;
+  font-size: 30px;
+  font-weight: 700;
+}
